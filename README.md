@@ -9,10 +9,10 @@
 1. loadkeys -trq
 2. setfont ter-124b
 3. iwctl
-4. device list
-5. station 'name' get-networks
-6. station 'name' connect 'SSID'
-7. exit
+  4. device list
+  5. station *name* get-networks
+  6. station *name* connect *SSID*
+  7. exit
 8. ping archlinux.org
 9. 
   
