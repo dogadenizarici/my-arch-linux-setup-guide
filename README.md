@@ -7,12 +7,22 @@
 
 # Walkthrough
 1. loadkeys -trq
-2. setfont ter-124b
-3. iwctl
-  1. device list
-  2. station *name* get-networks
-  3. station *name* connect *SSID*
-  4. exit
-4. ping archlinux.org
-5. 
-  
+1. setfont ter-124b
+1. iwctl
+    1. device list
+    1. station *name* get-networks
+    1. station *name* connect *SSID*
+    1. exit
+1. ping archlinux.org
+1. timedatectl set-ntp true
+1. timedatectl
+1. lsblk
+1. cfdisk /dev/*drive_name*
+1. 512MiB for EFI partition and rest for the system
+1. lsblk
+1. mkfs.fat -F 32 /dev/*efi_system_partition*
+1. mkfs.ext4 /dev/*root_partition*
+1. lsblk
+1. mount --mkdir /dev/*efi_system_partition* -o uid=0,gid=0,fmask=0077,dmask=0077 /mnt/boot
+1. mount /dev/*root_partition* /mnt
+1. pacstrap -K /mnt base linux-zen linux-zen-headers linux-firmware neovim 
